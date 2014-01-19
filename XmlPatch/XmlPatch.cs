@@ -81,10 +81,10 @@ namespace XmlPatch
                 throw new ArgumentNullException("sourceFilePath", "Source file path should be initialized.");
 
             if (patchFilePath == null)
-                throw new ArgumentNullException("patchFilePath", "Patch file path should be initialized");
+                throw new ArgumentNullException("patchFilePath", "Patch file path should be initialized.");
 
             if (resultFilePath == null)
-                throw new ArgumentNullException("resultFilePath", "Result file path should be initialized");
+                throw new ArgumentNullException("resultFilePath", "Result file path should be initialized.");
 
             var sourceDoc = new XmlDocument();
             sourceDoc.Load(sourceFilePath);
@@ -128,7 +128,7 @@ namespace XmlPatch
                 throw new ArgumentNullException("sourceRoot", "Source of xml-data should be initialized.");
 
             if (patchRoot == null)
-                throw new ArgumentNullException("patchRoot", "Xml-data of a patch should be initialized");
+                throw new ArgumentNullException("patchRoot", "Xml-data of a patch should be initialized.");
 
             var dict = new Dictionary<XmlNode, XmlNode> { { patchRoot, sourceRoot  } };
 
