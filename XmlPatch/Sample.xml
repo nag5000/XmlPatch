@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns:patch="http://schemas.xmlpatch"
+      xmlns:key="http://schemas.xmlpatch/mod/attr/key"
+      xmlns:merge="http://schemas.xmlpatch/mod/node/merge"
+      xmlns:remove="http://schemas.xmlpatch/mod/node/remove"
+      xmlns:mergeall="http://schemas.xmlpatch/mod/node/mergeall"
+      xmlns:removeall="http://schemas.xmlpatch/mod/node/removeall">
+  <settings>  
+    <!-- patch:find not used if patch:action="Create" -->
+    <node patch:action="[Merge]|Remove|Create|MergeAll|RemoveAll" 
+          patch:find="node[@anyattr='val']"
+          patch:create="append>."
+          anyattr="val">
+    </node>
+    
+    <!-- merge by default ("merge:node" or just "node") -->   
+    <merge:node patch:create="append>."
+                key:anyattr="val">
+    </merge:node>
+    
+    <!-- remove first node with anyattr="val" -->
+    <remove:node key:anyattr="val" />
+
+    <!-- remove all nodes with anyattr="val" -->
+    <removeall:node key:anyattr="val" />
+  </settings>
+</root>
